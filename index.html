@@ -15,6 +15,10 @@
       font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: white;
       overflow: hidden;
+      @keyframes floatText {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-100vh); opacity: 0; }
+}
     }
     h1 {
       font-size: clamp(2rem, 6vw, 4rem);
@@ -74,7 +78,8 @@
       conf.style.animationDuration = (2 + Math.random() * 3) + 's';
       conf.style.animationDelay = Math.random() * 2 + 's';
       document.body.appendChild(conf);
-    } // Flyvende hurra-tekst
+    }
+}// Flyvende hurra-tekst
 for (let i = 0; i < 10; i++) {
   let hurra = document.createElement('div');
   hurra.textContent = "HURRA!";
