@@ -78,3 +78,18 @@
   </script>
 </body>
 </html>
+// Flyvende hurra-tekst
+for (let i = 0; i < 10; i++) {
+  let hurra = document.createElement('div');
+  hurra.textContent = "HURRA!";
+  hurra.style.position = 'absolute';
+  hurra.style.fontSize = '2rem';
+  hurra.style.fontWeight = 'bold';
+  hurra.style.color = `hsl(${Math.random()*360}, 90%, 60%)`;
+  hurra.style.left = Math.random()*100 + 'vw';
+  hurra.style.top = Math.random()*100 + 'vh';
+  hurra.style.opacity = 0.8;
+  hurra.style.animation = 'floatText 5s ease-in-out infinite';
+  hurra.style.animationDelay = (Math.random()*5)+'s';
+  document.body.appendChild(hurra);
+}
