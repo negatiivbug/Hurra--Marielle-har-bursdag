@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hurra, Marielle har bursdag!</title>
+  <style>
+    html, body { height: 100%; margin: 0; }
+    body {
+      background: linear-gradient(180deg, #ff66a3 0%, #ff99cc 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: white;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: clamp(2rem, 6vw, 4rem);
+      margin: 0.2em;
+      text-align: center;
+    }
+    h2 {
+      font-size: clamp(1.2rem, 3vw, 2rem);
+      margin: 0.3em;
+      text-align: center;
+    }
+    .balloon {
+      position: absolute;
+      width: 50px;
+      height: 70px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.7);
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(100vh); opacity: 0.8; }
+      100% { transform: translateY(-10vh); opacity: 0; }
+    }
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: white;
+      animation: fall 4s linear infinite;
+    }
+    @keyframes fall {
+      0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 HURRA, Marielle har bursdag! 🎉</h1>
+  <h2>Gratulerer med dine 29 år for 12. gang på rad 🥳🎂</h2>
+
+  <script>
+    // Generate balloons
+    for (let i = 0; i < 15; i++) {
+      let balloon = document.createElement('div');
+      balloon.className = 'balloon';
+      balloon.style.left = Math.random() * 100 + 'vw';
+      balloon.style.backgroundColor = `hsl(${Math.random()*360}, 70%, 70%)`;
+      balloon.style.animationDuration = (4 + Math.random() * 3) + 's';
+      document.body.appendChild(balloon);
+    }
+    // Generate confetti
+    for (let i = 0; i < 100; i++) {
+      let conf = document.createElement('div');
+      conf.className = 'confetti';
+      conf.style.left = Math.random() * 100 + 'vw';
+      conf.style.backgroundColor = `hsl(${Math.random()*360}, 80%, 60%)`;
+      conf.style.animationDuration = (2 + Math.random() * 3) + 's';
+      conf.style.animationDelay = Math.random() * 2 + 's';
+      document.body.appendChild(conf);
+    }
+  </script>
+</body>
+</html>
